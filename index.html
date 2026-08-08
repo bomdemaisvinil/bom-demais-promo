@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bom Demais Vinil — Lote de entradas</title>
+<meta name="description" content="Accede al lote de entradas de Bom Demais Vinil y únete a la comunidad de WhatsApp. Carnaval de Valencia, 100% Vinyl Forró Festival.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<meta property="og:title" content="Bom Demais Vinil">
+<meta property="og:description" content="Lote de entradas · Carnaval · Valencia">
+<meta property="og:image" content="assets/word-title.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bom Demais Vinil">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<div class="poster">
+
+  <header class="poster-top">
+    <nav class="lang-switch" aria-label="Selector de idioma">
+      <button type="button" class="lang-btn is-active" data-lang="es" aria-pressed="true">
+        <span class="lang-code">ES</span><img class="lang-flag" src="assets/flag-es.png" alt="" width="20" height="14">
+      </button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+        <span class="lang-code">EN</span><img class="lang-flag" src="assets/flag-gb.png" alt="" width="20" height="14">
+      </button>
+      <button type="button" class="lang-btn" data-lang="pt" aria-pressed="false">
+        <span class="lang-code">PT</span><img class="lang-flag" src="assets/flag-pt.png" alt="" width="20" height="14">
+      </button>
+    </nav>
+
+    <h1 class="poster-title">
+      <img src="assets/word-title.png" alt="Bom Demais Vinil">
+    </h1>
+
+    <p class="poster-subline">
+      <img src="assets/word-valencia.png" alt="Valencia">
+      <span class="subline-dot" aria-hidden="true">•</span>
+      <img src="assets/word-fechas.png" alt="26, 27 y 28 de febrero">
+    </p>
+
+    <p class="poster-eyebrow">
+      <img src="assets/word-eyebrow.png" alt="Primer lote especial Fole">
+    </p>
+  </header>
+
+  <main id="main" class="poster-band">
+    <div class="band-inner">
+      <img class="poster-logo" src="assets/logo.png" alt="Bom Demais Vinil" width="700" height="700">
+
+      <section class="cards" aria-label="Acciones disponibles">
+
+        <!-- Tarjeta 1: entradas -->
+        <article class="card card--tickets" data-state-card="tickets">
+          <div class="card-icon" aria-hidden="true">🎟️</div>
+          <h2 class="card-title" data-i18n="tickets.title">Comprar entradas</h2>
+          <p class="card-text" data-i18n="tickets.text">Introduce el código promocional para acceder al lote.</p>
+          <button type="button" class="btn btn--primary" id="open-modal-btn" data-i18n="tickets.cta">ACCEDER</button>
+        </article>
+
+        <!-- Tarjeta de estado cerrado -->
+        <article class="card card--sold-out" data-state-card="sold-out" hidden>
+          <div class="card-icon" aria-hidden="true">🎟️</div>
+          <h2 class="card-title" data-i18n="soldOut.title">Lote promocional agotado</h2>
+          <p class="card-text" data-i18n="soldOut.text">Las entradas promocionales ya no están disponibles.</p>
+          <p class="card-text card-text--next" data-i18n="soldOut.next" data-i18n-html>Siguiente lote early bird: <strong>13 de septiembre</strong>, info en nuestro <a href="https://chat.whatsapp.com/JyMJoG2I4E84xzDUrPU4Dh" target="_blank" rel="noopener">grupo de WhatsApp</a>.</p>
+        </article>
+
+        <!-- Tarjeta 2: whatsapp -->
+        <article class="card card--whatsapp" data-state-card="whatsapp">
+          <div class="card-icon" aria-hidden="true">💬</div>
+          <h2 class="card-title" data-i18n="whatsapp.title">Grupo oficial de WhatsApp</h2>
+          <p class="card-text" data-i18n="whatsapp.text">Recibe avisos, novedades y toda la información del evento.</p>
+          <a class="btn btn--secondary" id="whatsapp-btn" href="#" target="_blank" rel="noopener" data-i18n="whatsapp.cta">UNIRME</a>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="poster-bottom">
+    <a href="https://www.instagram.com/bomdemais.vinil?igsh=OHF1dmcxa3F3aWly" target="_blank" rel="noopener" class="insta-link">
+      <img src="assets/word-insta.png" alt="Instagram: arroba bomdemais punto vinil">
+    </a>
+  </footer>
+
+</div>
+
+<!-- Modal de código promocional -->
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="modal">
+    <h2 id="modal-title" data-i18n="modal.title">Código promocional</h2>
+    <label class="modal-label" for="promo-input" data-i18n="modal.label">Introducir código</label>
+    <input type="text" id="promo-input" class="modal-input" autocomplete="off" autocapitalize="characters" inputmode="text">
+    <p class="modal-error" id="modal-error" role="alert" hidden data-i18n="modal.error">Código incorrecto. Inténtalo de nuevo.</p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn--ghost" id="modal-cancel" data-i18n="modal.cancel">Cancelar</button>
+      <button type="button" class="btn btn--primary" id="modal-continue" data-i18n="modal.continue">Continuar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

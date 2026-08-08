@@ -1,0 +1,371 @@
+/* =========================================================
+   BOM DEMAIS VINIL — Design tokens
+   El rojo de la franja es el mismo que usaste en tu maqueta
+   (#8c1818), así queda coherente con el resto de piezas.
+   ========================================================= */
+:root{
+  --rojo-banda:     #8c1818;
+  --granate:        #451219;
+  --granate-oscuro: #2c0b0f;
+  --crema:          #f1e4c3;
+  --blanco-roto:    #faf6ec;
+  --tinta:          #241512;
+
+  --font-body: 'Barlow Semi Condensed', system-ui, sans-serif;
+  --font-label: 'Barlow Condensed', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --radius: 6px;
+  --shadow-card: 0 10px 24px -12px rgba(36,21,18,0.45);
+  --ease: cubic-bezier(.25,.7,.35,1);
+}
+
+*,*::before,*::after{ box-sizing: border-box; }
+html{ -webkit-text-size-adjust: 100%; }
+
+body{
+  margin:0;
+  min-height:100dvh;
+  font-family: var(--font-body);
+  color: var(--tinta);
+  background-color: #a9812f;
+}
+
+.sr-only{
+  position:absolute; width:1px; height:1px;
+  padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+.skip-link{
+  position:absolute; left:1rem; top:-3rem;
+  background:var(--crema); color:var(--granate-oscuro);
+  padding:.6rem 1rem; border-radius:var(--radius);
+  z-index:100; transition: top .2s var(--ease);
+  font-family: var(--font-label); font-weight:600;
+}
+.skip-link:focus{ top:1rem; }
+
+:focus-visible{
+  outline: 3px solid var(--crema);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Contenedor general — un único fondo continuo para todo el
+   póster (sin bandas de color separadas). Se estira exacto a
+   la altura real del contenido, así nunca hay costuras ni
+   franjas visibles, tenga la página el alto que tenga.
+   ========================================================= */
+.poster{
+  position:relative;
+  background-image: url('../assets/fondo.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: #a9812f; /* mismo tono dorado del fondo, por si tarda en cargar */
+}
+
+.poster-top,
+.poster-bottom{
+  position:relative;
+  text-align:center;
+}
+
+.poster-top{
+  padding: 2.6rem 1.5rem 1.6rem;
+}
+.poster-bottom{
+  padding: 1.6rem 1.5rem;
+}
+
+/* =========================================================
+   Selector de idioma
+   ========================================================= */
+.lang-switch{
+  position:absolute;
+  top: .9rem; right: .9rem;
+  z-index: 4;
+  display:flex; gap:.35rem;
+}
+.lang-btn{
+  display:flex; align-items:center; gap:.25rem;
+  background: rgba(250,246,236,0.85);
+  border: 1.5px solid var(--granate);
+  color: var(--granate-oscuro);
+  border-radius: 999px;
+  padding: .25rem .5rem;
+  font-family: var(--font-label);
+  font-weight:600;
+  font-size: .72rem;
+  cursor:pointer;
+  transition: background .18s var(--ease), transform .18s var(--ease);
+}
+.lang-flag{ width: 18px; height: auto; display:block; border-radius: 2px; }
+.lang-btn:hover{ transform: translateY(-1px); }
+.lang-btn.is-active{
+  background: var(--granate);
+  color: var(--crema);
+}
+
+/* =========================================================
+   Palabras como imágenes — cada una con su propio ancho
+   fluido (clamp) para mantener la jerarquía tipográfica en
+   cualquier tamaño de pantalla, sin deformarse (height:auto).
+   ========================================================= */
+.poster-title{ margin: 0 0 .25rem; line-height:0; }
+.poster-title img{
+  width: clamp(280px, 74vw, 620px);
+  height: auto;
+  display:inline-block;
+  filter: drop-shadow(0 2px 3px rgba(36,12,4,0.55));
+}
+
+.poster-subline{
+  margin: 0 0 .9rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap: wrap;
+  gap: .35rem .6rem;
+  line-height:0;
+}
+.poster-subline img{
+  height: clamp(17px, 3.3vw, 27px);
+  width: auto;
+  display:block;
+  filter: drop-shadow(0 1px 2px rgba(36,12,4,0.55));
+}
+.subline-dot{
+  color: var(--blanco-roto);
+  font-size: .7rem;
+  line-height:1;
+  opacity:.85;
+  filter: drop-shadow(0 1px 2px rgba(36,12,4,0.55));
+}
+
+.poster-eyebrow{ margin: 0; line-height:0; }
+.poster-eyebrow img{
+  width: clamp(240px, 54vw, 440px);
+  height: auto;
+  display:inline-block;
+  filter: drop-shadow(0 2px 3px rgba(36,12,4,0.55));
+}
+
+.poster-bottom img{
+  width: clamp(220px, 55vw, 380px);
+  height: auto;
+  display:inline-block;
+  filter: drop-shadow(0 2px 3px rgba(36,12,4,0.55));
+}
+.insta-link{
+  display:inline-block;
+  line-height:0;
+  transition: opacity .15s var(--ease);
+}
+.insta-link:hover,
+.insta-link:focus-visible{
+  opacity:.8;
+}
+
+/* =========================================================
+   Franja — logo (disco girando) + tarjetas. Sin fondo propio:
+   se ve el fondo continuo del póster por detrás.
+   ========================================================= */
+.poster-band{
+  padding: 1.75rem 1.25rem;
+}
+
+.band-inner{
+  max-width: 900px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 1.5rem;
+}
+
+.poster-logo{
+  width: clamp(150px, 46vw, 230px);
+  height: auto;
+  flex: 0 0 auto;
+  animation: spin-cw 27s linear infinite;
+}
+@keyframes spin-cw{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce){
+  .poster-logo{ animation: none; }
+}
+
+.cards{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap: 1rem;
+}
+
+/* =========================================================
+   Tarjetas
+   ========================================================= */
+.card{
+  background: linear-gradient(180deg, rgba(250,246,236,0.98), rgba(241,228,195,0.98));
+  border: 1px solid rgba(69,18,25,0.28);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.3rem;
+  box-shadow: 0 14px 30px -10px rgba(36,12,4,0.55);
+  text-align:center;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.card[hidden]{ display:none !important; }
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px -14px rgba(36,21,18,0.5);
+}
+.card-icon{ font-size: 2rem; margin-bottom:.4rem; }
+.card-title{
+  font-family: var(--font-label);
+  font-weight:700;
+  font-size: 1.3rem;
+  letter-spacing:.01em;
+  color: var(--granate-oscuro);
+  margin: 0 0 .4rem;
+}
+.card-text{
+  font-size: .98rem;
+  line-height:1.5;
+  color: var(--tinta);
+  margin: 0 0 1.1rem;
+}
+.card-text--next{ margin-top:.2rem; font-size:.9rem; opacity:.9; }
+.card-text--next a{
+  color: var(--granate-oscuro);
+  font-weight:600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.card-text--next a:hover{ color: var(--rojo-banda); }
+.card--sold-out .card-icon{ opacity:.55; }
+
+.btn{
+  font-family: var(--font-label);
+  font-weight:700;
+  letter-spacing: .08em;
+  font-size: .95rem;
+  border-radius: 999px;
+  padding: .8rem 1.8rem;
+  border: none;
+  cursor:pointer;
+  display:inline-block;
+  text-decoration:none;
+  transition: transform .15s var(--ease), background .15s var(--ease);
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+.btn--primary{
+  background: var(--granate);
+  color: var(--crema);
+}
+.btn--primary:hover{ background: var(--granate-oscuro); }
+.btn--secondary{
+  background: var(--granate-oscuro);
+  color: var(--blanco-roto);
+}
+.btn--secondary:hover{ background: #1c0709; }
+.btn--ghost{
+  background: transparent;
+  color: var(--granate);
+  border: 1.5px solid var(--granate);
+}
+.btn--ghost:hover{ background: rgba(69,18,25,0.08); }
+
+/* =========================================================
+   Modal
+   ========================================================= */
+.modal-overlay[hidden]{
+  display:none;
+}
+.modal-overlay{
+  position: fixed; inset:0; z-index:50;
+  background: rgba(36,21,18,0.55);
+  display:flex; align-items:center; justify-content:center;
+  padding: 1.25rem;
+  opacity:0;
+  animation: fade-in .18s var(--ease) forwards;
+}
+@keyframes fade-in{ to{ opacity:1; } }
+
+.modal{
+  width: 100%; max-width: 380px;
+  background: var(--blanco-roto);
+  border-radius: 10px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 24px 50px -18px rgba(0,0,0,0.5);
+  transform: translateY(8px) scale(.98);
+  opacity:0;
+  animation: modal-rise .22s var(--ease) .02s forwards;
+}
+@keyframes modal-rise{ to{ transform:none; opacity:1; } }
+@media (prefers-reduced-motion: reduce){
+  .modal-overlay, .modal{ animation:none; opacity:1; transform:none; }
+}
+
+.modal h2{
+  font-family: var(--font-label);
+  font-weight:700;
+  font-size: 1.3rem;
+  margin: 0 0 1rem;
+  color: var(--granate-oscuro);
+  text-align:center;
+}
+.modal-label{
+  display:block;
+  font-family: var(--font-label);
+  font-weight:600;
+  font-size: .85rem;
+  letter-spacing:.05em;
+  color: var(--tinta);
+  margin-bottom:.4rem;
+}
+.modal-input{
+  width:100%;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .75rem .9rem;
+  border-radius: var(--radius);
+  border: 2px solid rgba(69,18,25,0.3);
+  background: #fff;
+  color: var(--tinta);
+}
+.modal-input:focus{ border-color: var(--granate); }
+.modal-error{
+  color: var(--rojo-banda);
+  font-size: .85rem;
+  font-weight:600;
+  margin: .6rem 0 0;
+}
+.modal-actions{
+  display:flex; gap: .7rem;
+  margin-top: 1.4rem;
+}
+.modal-actions .btn{ flex:1; text-align:center; }
+
+/* =========================================================
+   Responsive — a partir de tablet, el logo pasa a la
+   izquierda y las tarjetas a su derecha
+   ========================================================= */
+@media (min-width: 640px){
+  .band-inner{
+    flex-direction: row;
+    align-items: center;
+  }
+  .poster-band{ padding: 2.5rem 2rem; }
+  .poster-logo{ width: clamp(180px, 26vw, 250px); }
+}
+@media (min-width: 960px){
+  .cards{ flex-direction: row; }
+  .card{ flex:1; display:flex; flex-direction:column; justify-content:space-between; }
+  .card .btn{ align-self:center; }
+}
