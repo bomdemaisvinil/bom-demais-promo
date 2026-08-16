@@ -6,15 +6,11 @@
    para cambiarlos, sustituye los archivos en assets/.
    ========================================================= */
 const CONFIG = {
-  estado: "cerrada",              // "activa" | "cerrada"
+  estado: "activa",              // "activa" | "cerrada"
   evento: "Bom Demais Vinil",
   urlEntradas: "https://entradium.com/es/events/bom-demais-vinil-2027-valencia-lote-fole",
   urlWhatsapp: "https://chat.whatsapp.com/JyMJoG2I4E84xzDUrPU4Dh",
-  proximoLote: {
-    es: "13 de septiembre",
-    en: "September 13th",
-    pt: "13 de setembro"
-  }
+  urlInstagram: "https://www.instagram.com/bomdemais.vinil?igsh=OHF1dmcxa3F3aWly"
 };
 
 /* =========================================================
@@ -28,9 +24,9 @@ const I18N = {
     "whatsapp.title": "Grupo oficial de WhatsApp",
     "whatsapp.text": "Recibe avisos, novedades y toda la información del evento.",
     "whatsapp.cta": "UNIRME",
-    "soldOut.title": "Lote agotado",
+    "soldOut.title": "Lote Especial Agotado",
     "soldOut.text": "Las entradas promocionales ya no están disponibles.",
-    "soldOut.next": `Siguiente lote early bird: <strong>${CONFIG.proximoLote.es}</strong>, info en nuestro <a href="${CONFIG.urlWhatsapp}" target="_blank" rel="noopener">grupo de WhatsApp</a>.`
+    "soldOut.next": `El primer lote Early Bird se abrirá muy pronto. Info en nuestro <a href="${CONFIG.urlWhatsapp}" target="_blank" rel="noopener">grupo de WhatsApp</a> e <a href="${CONFIG.urlInstagram}" target="_blank" rel="noopener">Instagram</a>.`
   },
   en: {
     "tickets.title": "Buy tickets",
@@ -39,9 +35,9 @@ const I18N = {
     "whatsapp.title": "Official WhatsApp group",
     "whatsapp.text": "Get alerts, updates and all the event information.",
     "whatsapp.cta": "JOIN",
-    "soldOut.title": "Sold out",
+    "soldOut.title": "Special Batch Sold Out",
     "soldOut.text": "Promotional tickets are no longer available.",
-    "soldOut.next": `Next early bird batch: <strong>${CONFIG.proximoLote.en}</strong>, info in our <a href="${CONFIG.urlWhatsapp}" target="_blank" rel="noopener">WhatsApp group</a>.`
+    "soldOut.next": `The first Early Bird batch will open very soon. Info in our <a href="${CONFIG.urlWhatsapp}" target="_blank" rel="noopener">WhatsApp group</a> and <a href="${CONFIG.urlInstagram}" target="_blank" rel="noopener">Instagram</a>.`
   },
   pt: {
     "tickets.title": "Comprar bilhetes",
@@ -50,9 +46,9 @@ const I18N = {
     "whatsapp.title": "Grupo oficial de WhatsApp",
     "whatsapp.text": "Recebe avisos, novidades e toda a informação do evento.",
     "whatsapp.cta": "JUNTAR-ME",
-    "soldOut.title": "Lote esgotado",
+    "soldOut.title": "Lote Especial Esgotado",
     "soldOut.text": "Os bilhetes promocionais já não estão disponíveis.",
-    "soldOut.next": `Próximo lote early bird: <strong>${CONFIG.proximoLote.pt}</strong>, info no nosso <a href="${CONFIG.urlWhatsapp}" target="_blank" rel="noopener">grupo de WhatsApp</a>.`
+    "soldOut.next": `O primeiro lote Early Bird vai abrir muito em breve. Info no nosso <a href="${CONFIG.urlWhatsapp}" target="_blank" rel="noopener">grupo de WhatsApp</a> e <a href="${CONFIG.urlInstagram}" target="_blank" rel="noopener">Instagram</a>.`
   }
 };
 

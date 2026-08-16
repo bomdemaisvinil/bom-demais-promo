@@ -75,7 +75,7 @@ body{
   padding: 2.6rem 1.5rem 1.6rem;
 }
 .poster-bottom{
-  padding: 1.6rem 1.5rem;
+  padding: 0.7rem 1.5rem 1.6rem;
 }
 
 /* =========================================================
@@ -172,7 +172,7 @@ body{
    se ve el fondo continuo del póster por detrás.
    ========================================================= */
 .poster-band{
-  padding: 1.75rem 1.25rem;
+  padding: 1.75rem 1.25rem 1.1rem;
 }
 
 .band-inner{
@@ -288,7 +288,7 @@ body{
     flex-direction: row;
     align-items: center;
   }
-  .poster-band{ padding: 2.5rem 2rem; }
+  .poster-band{ padding: 2.5rem 2rem 1.6rem; }
   .poster-logo{ width: clamp(180px, 26vw, 250px); }
 }
 @media (min-width: 960px){
