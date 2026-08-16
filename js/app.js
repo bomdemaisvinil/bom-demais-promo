@@ -19,7 +19,7 @@ const CONFIG = {
 const I18N = {
   es: {
     "tickets.title": "Comprar entradas",
-    "tickets.text": "Accede a la venta de entradas en Entradium.",
+    "tickets.text": "Accede a la venta de entradas.",
     "tickets.cta": "ACCEDER",
     "whatsapp.title": "Grupo oficial de WhatsApp",
     "whatsapp.text": "Recibe avisos, novedades y toda la información del evento.",
@@ -30,7 +30,7 @@ const I18N = {
   },
   en: {
     "tickets.title": "Buy tickets",
-    "tickets.text": "Access ticket sales on Entradium.",
+    "tickets.text": "Access ticket sales.",
     "tickets.cta": "ENTER",
     "whatsapp.title": "Official WhatsApp group",
     "whatsapp.text": "Get alerts, updates and all the event information.",
@@ -41,7 +41,7 @@ const I18N = {
   },
   pt: {
     "tickets.title": "Comprar bilhetes",
-    "tickets.text": "Acede à venda de bilhetes na Entradium.",
+    "tickets.text": "Acede à venda de bilhetes.",
     "tickets.cta": "ACEDER",
     "whatsapp.title": "Grupo oficial de WhatsApp",
     "whatsapp.text": "Recebe avisos, novidades e toda a informação do evento.",
