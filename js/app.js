@@ -6,7 +6,7 @@
    para cambiarlos, sustituye los archivos en assets/.
    ========================================================= */
 const CONFIG = {
-  estado: "cerrada",              // "activa" | "cerrada"
+  estado: "activa",              // "activa" | "cerrada"
   evento: "Bom Demais Vinil",
   urlEntradas: "https://entradium.com/es/events/bom-demais-vinil-2027-valencia-lote-fole",
   urlWhatsapp: "https://chat.whatsapp.com/JyMJoG2I4E84xzDUrPU4Dh",
