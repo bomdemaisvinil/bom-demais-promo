@@ -1,5 +1,5 @@
 /* =========================================================
-   BOM DEMAIS VINIL — Configuración
+   BOM DEMAIS VINIL —  Configuración
    Para reutilizar esta página en una futura promoción, edita
    ÚNICAMENTE este objeto. Los textos del cartel (eyebrow,
    título, Valencia, fechas, Instagram) son imágenes fijas:
